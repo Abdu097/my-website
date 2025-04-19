@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таджуид Курсы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #4caf50, #ffeb3b);
+      color: #3e2723;
+      padding: 50px;
+      text-align: left;
+      animation: fadeInBody 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #2c6e2f;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      animation: slideInFromLeft 1s ease-in-out;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #3d5b31;
+      animation: slideInFromLeft 1.2s ease-in-out;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #4e342e;
+      animation: fadeInText 1.5s ease-in-out;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #3e2723;
+      animation: fadeInText 2s ease-in-out;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #2c6e2f;
+      color: white;
+      padding: 12px 30px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: 0.3s;
+      animation: bounceButton 1.5s infinite;
+    }
+
+    .button:hover {
+      background-color: #1b5e20;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: fadeInContainer 1.5s ease-in-out;
+    }
+
+    /* Анимации */
+    @keyframes fadeInBody {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInFromLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes bounceButton {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Новый стиль для видео */
+    .lesson {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #388e3c;
+      margin: 10px 0;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      color: white;
+      animation: fadeInText 2.5s ease-in-out;
+    }
+
+    .lesson:hover {
+      background-color: #2e7d32;
+    }
+
+    .lesson-details {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #4caf50;
+      border-radius: 10px;
+      animation: fadeInVideo 1.5s ease-in-out;
+    }
+
+    /* Стиль для видео */
+    video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    video.show {
+      opacity: 1;
+    }
+
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      .container {
+        padding: 15px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p, ul li {
+        font-size: 16px;
+      }
+
+      .button {
+        padding: 10px 25px;
+        font-size: 16px;
+      }
+
+      .lesson {
+        font-size: 16px;
+        padding: 8px;
+      }
+    }
+
+    /* Адаптивность для мобильных телефонов */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p, ul li {
+        font-size: 14px;
+      }
+
+      .button {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+
+      .lesson {
+        font-size: 14px;
+        padding: 6px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Таджуид Курсы – Құранды дұрыс оқуды үйрен!</h1>
+    <h2>Авторлық курс | Амина Қуаныш</h2>
+
+    <p>Құран – Раббымыздың сөзі. Оны әдемі, дұрыс, қағидаларына сай оқу – әрбір мұсылманның міндеті. Егер сіз:</p>
+    <ul>
+      <li>Құран оқи аласыз, бірақ ережелерін білмейсіз бе?</li>
+      <li>Таджуидпен оқу қиын көріне ме?</li>
+      <li>Қателеспей, өзіңізге сенімді оқуды қалайсыз ба?</li>
+    </ul>
+    <p>Онда бұл курс сіз үшін!</p>
+
+    <h2>Курста не үйренесіз?</h2>
+    <ul>
+      <li>Таджуидтің негізгі ережелері</li>
+      <li>Хәріптердің дұрыс айтылуы (махраждары)</li>
+      <li>Қысқа және нақты түсіндірулер</li>
+      <li>Мысалдар және жаттығулар</li>
+      <li>Тікелей қолдау және кері байланыс</li>
+    </ul>
+
+    <a href="https://wa.me/77058922719" class="button" target="_blank">Курсқа жазылу (WhatsApp)</a>
+  </div>
+
+  <!-- Кнопка для открытия первого урока -->
+  <div class="lesson" onclick="toggleLesson('lesson1')">
+    Бірінші сабақ
+  </div>
+
+  <!-- Видео для первого урока -->
+  <div id="lesson1" class="lesson-details">
+    <video id="video1" controls>
+      <source src="your-video.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+  </div>
+
+  <script>
+    function toggleLesson(lessonId) {
+      const lesson = document.getElementById(lessonId);
+      const video = document.getElementById('video1');
+      
+      if (lesson.style.display === "none" || lesson.style.display === "") {
+        lesson.style.display = "block";
+        video.classList.add('show');
+      } else {
+        lesson.style.display = "none";
+        video.classList.remove('show');
+      }
+    }
+  </script>
+
+</body>
+</html>
