@@ -2,79 +2,173 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>ТеплоShop — Главная</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТеплоShop</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
+      margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at center, #ffcc00, #ff9900);
-      color: #222;
-      overflow-x: hidden;
+      background: linear-gradient(135deg, #ffcc00, #ff6600, #000);
+      color: white;
     }
 
-    nav {
-      background: #222;
-      padding: 15px 0;
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
-      color: #fff;
+      margin: 0 15px;
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
+      color: white;
       font-size: 18px;
-      transition: 0.3s;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      color: #ffcc00;
+      background-color: #ff9900;
+      color: black;
     }
 
-    .card {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      padding: 30px;
-      width: 90%;
-      max-width: 700px;
-      margin: 40px auto;
+    section {
+      padding: 100px 20px;
       text-align: center;
-      box-shadow: 0 0 30px rgba(0,0,0,0.3);
-      animation: fadeIn 1.2s ease-in-out;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .section-box {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: popUp 1.5s ease forwards;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popUp {
+      from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
 
     h1 {
       font-size: 36px;
-      color: #ff9900;
+      color: #fff700;
     }
 
     p {
-      font-size: 16px;
-      margin: 20px 0;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .shapes {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape1 {
+      width: 300px;
+      height: 300px;
+      top: 10%;
+      left: -150px;
+    }
+
+    .shape2 {
+      width: 200px;
+      height: 200px;
+      bottom: 5%;
+      right: -100px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html">Главная</a>
-    <a href="about.html">О нас</a>
-    <a href="catalog.html">Каталог</a>
-    <a href="contact.html">Контакты</a>
-  </nav>
-
-  <div class="card">
-    <h1>Добро пожаловать в ТеплоShop!</h1>
-    <p>Здесь вы найдете тепло в каждой вещи — уютную одежду, атмосферные товары для дома и чудесные подарки для близких.</p>
+  <div class="shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
   </div>
 
+  <header>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#about">О нас</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="section-box">
+      <h1>Добро пожаловать в ТеплоShop!</h1>
+      <p>ТеплоShop — ваш источник тепла, вдохновения и уюта. Мы собираем лучшие товары, чтобы каждый мог найти что-то особенное для себя и своих близких.</p>
+      <p>От мягких пледов до стильной одежды — мы верим, что каждый элемент должен приносить радость. Здесь начинается ваше путешествие по настоящему уютному магазину.</p>
+      <p>С нами уют всегда рядом!</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-box">
+      <h1>О нас</h1>
+      <p>ТеплоShop — команда энтузиастов, которые любят уют, стиль и заботу о клиентах. Мы создали магазин, где каждая покупка — это история с душой.</p>
+      <p>Наша цель — радовать вас, вдохновлять и помогать сделать дом теплым уголком счастья. Мы следим за качеством, выбираем лучшее и стремимся к тому, чтобы вы улыбались каждый раз, открывая нашу посылку.</p>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="section-box">
+      <h1>Каталог</h1>
+      <p>У нас вы найдёте разнообразие товаров для любого настроения и случая:</p>
+      <p>• Домашний уют: пледы, свечи, подушки, декор.<br>
+         • Одежда: удобная, стильная, уютная — для мужчин, женщин и детей.<br>
+         • Подарки: оригинальные, добрые и запоминающиеся.<br>
+         • Аксессуары: уникальные мелочи, которые делают повседневность ярче.</p>
+      <p>Обновляем каталог регулярно, следим за трендами и прислушиваемся к вашим желаниям!</p>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="section-box">
+      <h1>Контакты</h1>
+      <p>Свяжитесь с нами, если у вас есть вопросы, предложения или просто желание пообщаться!</p>
+      <p>📱 Telegram: <a href="https://t.me/Pupirka097" style="color: #ffcc00">@Pupirka097</a></p>
+      <p>📞 WhatsApp: <a href="https://wa.me/77472831760" style="color: #ffcc00">+7 747 283 1760</a></p>
+      <p>📧 Email: <a href="mailto:kuanysh.abdurahman097@gmail.com" style="color: #ffcc00">kuanysh.abdurahman097@gmail.com</a></p>
+      <p>С любовью и заботой — команда ТеплоShop!</p>
+    </div>
+  </section>
 </body>
 </html>
+
