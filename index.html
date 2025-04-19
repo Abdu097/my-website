@@ -14,6 +14,39 @@
       background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
       color: white;
       overflow-x: hidden;
+      padding-top: 70px;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #ffcc00, #ff8800);
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      z-index: 1000;
+      animation: slideDown 1s ease-out;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #000;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .background {
@@ -115,32 +148,38 @@
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#about">О нас</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+
   <div class="background">
     <div class="circle" style="width: 600px; height: 600px; top: -100px; left: -100px;"></div>
     <div class="circle" style="width: 400px; height: 400px; bottom: -100px; right: -100px;"></div>
   </div>
 
-  <div class="card">
+  <div class="card" id="home">
     <h1>ТеплоShop</h1>
-
     <hr>
-
     <h2>Главная страница</h2>
     <p>Привет! Добро пожаловать в ТеплоShop — магазин, где каждый товар несёт тепло, уют и хорошее настроение!<br>Мы не просто продаём — мы радуем!</p>
 
     <hr>
 
-    <h2>Что ты найдёшь у нас?</h2>
+    <h2 id="about">Что ты найдёшь у нас?</h2>
     <p>Одежду и аксессуары — удобно, стильно и по-доброму красиво!</p>
     <p>Товары для дома — от пледов до свечей, чтобы каждый уголок стал уютным.</p>
-    <p>Подарки — хочешь удивить? У нас есть идеи для каждого повода!</p>
+    <p id="catalog">Подарки — хочешь удивить? У нас есть идеи для каждого повода!</p>
     <p>Индивидуальные заказы — мы любим творить вместе с тобой.</p>
     <p>Молниеносную доставку — потому что ждать скучно!</p>
     <p>Добрую поддержку — всегда на связи, всегда с улыбкой!</p>
 
     <hr>
 
-    <h2>Хочешь задать вопрос или просто поболтать? Напиши нам!</h2>
+    <h2 id="contact">Хочешь задать вопрос или просто поболтать? Напиши нам!</h2>
     <a href="https://t.me/Pupirka097" target="_blank" class="btn">
       <i class="fab fa-telegram-plane"></i> Написать в Telegram
     </a>
@@ -155,3 +194,4 @@
   </div>
 </body>
 </html>
+
